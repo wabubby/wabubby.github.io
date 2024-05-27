@@ -36,9 +36,9 @@
 }
 
 .theme-necess {
-    --main: #BB8F5A;
-    --main-light: #C59D61;
-    --main-dark: #726147;
+    --main: #90A35B;
+    --main-light: #BFB164;
+    --main-dark: #6E824D;
 }
 
 .theme-break {
@@ -46,6 +46,13 @@
     --main-light: #CE6A6A;
     --main-dark: #8E3C4B;
 }
+
+.theme-sleep {
+    --main: #393954;
+    --main-light: #4E4B60;
+    --main-dark: #383841;
+}
+
 
 
 body {
@@ -210,6 +217,12 @@ button {
     background-color: var(--break-dark);
 }
 
+.sleep-button {
+    background-color: var(--sleep-light);
+}
+.sleep-button:active {
+    background-color: var(--sleep-dark);
+}
 
 /* comic modal */
 .modal {

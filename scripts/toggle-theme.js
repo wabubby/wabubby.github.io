@@ -1,5 +1,5 @@
 
-var themes = ["theme-work", "theme-necess", "theme-break"]
+var themes = ["theme-work", "theme-necess", "theme-break", "theme-sleep"]
 
 function resetTheme() {
   const temp = document.body.classList;
@@ -15,6 +15,6 @@ function switchWorkTheme(themeClass) {
 }
 
 document.getElementById("work").addEventListener("click", () => switchWorkTheme("theme-work"));
-document.getElementById("eat").addEventListener("click", () => switchWorkTheme("theme-necess"));
+document.getElementById("necess").addEventListener("click", () => switchWorkTheme("theme-necess"));
 document.getElementById("break").addEventListener("click", () => switchWorkTheme("theme-break"));
 document.getElementById("sleep").addEventListener("click", () => switchWorkTheme("theme-sleep"));

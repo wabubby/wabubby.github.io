@@ -29,13 +29,13 @@ class Particle {
 
     // activate surrounding cells in case :)
     if (this.isActive) {
-      this.activateSurroundingParticles(matrix);
+      this.activateSurroundingParticles(matrix, prevX, prevY);
     }
   }
 
-  activateSurroundingParticles(matrix) {
-    for (let x=this.mx-1; x<=this.mx+1; x++) {
-      for (let y=this.my-1; y<=this.my+1; y++) {
+  activateSurroundingParticles(matrix, prevx, prevy) {
+    for (let x=this.prevx-1; x<=this.prevx+1; x++) {
+      for (let y=this.prevy-1; y<=this.prevy+1; prevy++) {
         let p = matrix.get(x, y);
         if (p == null || p == this) { continue; }
         p.activate()
@@ -67,9 +67,11 @@ class Particle {
       case 0:
         return this.variate("#4C948A");
       case 1:
-        return this.variate("#BB8F5A");
+        return this.variate("#90A35B");
       case 2:
         return this.variate("#c94b62");
+      case 3:
+        return this.variate("#393954");
       default:
         return "#000000";
     }
@@ -132,11 +134,6 @@ class Sim {
       var row = [];
       for (let x=0; x<this.mw; x++) {
         row.push(EmptyCell.emptyInstance);
-        // if (y > this.mh/2) { // Math.random() > 0.5
-        //   row.push(EmptyCell.emptyInstance);
-        // } else {
-        //   row.push(new Particle(x, y, (Math.floor(x/4)+Math.floor(y/4))%2)); // Math.floor(Math.random() * 3)
-        // }
       }
       this.matrix.push(row);
     }
@@ -335,6 +332,7 @@ class Sim {
   }
 
   changeId(id) {
+    console.log(`changing id to ${id}`)
     this.id = id;
   }
   
@@ -527,10 +525,10 @@ setInterval(() => {
 }, 1000);
 
 
-document.getElementById("work").addEventListener("click", () => {sim.id = 0; secondsElapsed=0; writeTabTitle(); });
-document.getElementById("necess").addEventListener("click", () => {sim.id = 1; secondsElapsed=0; writeTabTitle();});
-document.getElementById("break").addEventListener("click", () => {sim.id = 2; secondsElapsed=0; writeTabTitle();});
-
+document.getElementById("work").addEventListener("click", () => {sim.changeId(0); secondsElapsed=0; writeTabTitle(); });
+document.getElementById("necess").addEventListener("click", () => {sim.changeId(1); secondsElapsed=0; writeTabTitle();});
+document.getElementById("break").addEventListener("click", () => {sim.changeId(2); secondsElapsed=0; writeTabTitle();});
+document.getElementById("sleep").addEventListener("click", () => {sim.changeId(3); secondsElapsed=0; writeTabTitle();});
 
 /* ALARMS */
 
