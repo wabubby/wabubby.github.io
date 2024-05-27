@@ -18,3 +18,4 @@ document.getElementById("work").addEventListener("click", () => switchWorkTheme(
 document.getElementById("necess").addEventListener("click", () => switchWorkTheme("theme-necess"));
 document.getElementById("break").addEventListener("click", () => switchWorkTheme("theme-break"));
 document.getElementById("sleep").addEventListener("click", () => switchWorkTheme("theme-sleep"));
+ 
