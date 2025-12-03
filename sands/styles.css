@@ -1,58 +1,55 @@
 
 /* root refers to <html>. use it to define global properties to be used throughout the stylesheet */
 :root {
-    --black: #505050;
+    --void: #0C151D;
+    --black: #1a2625;
+    --grey: #627267;
+    --grey: #b5bda6;
+    --white: #fff6eb;
+    --red: #f91d5a;
+    --darkred: #c11542;
+    --yellow: #f8df59;
+    --darkyellow: #8a773c;
+    --green: #2ded7a;
+    --darkgreen: #198e79;
+    --blue: #27cbf3;
+    --darkblue: #3a62a1;
+    --purple: #be55f2;
+    --darkpurple: #7643b6;
 
-    --white: #eeeeee;
-    --grey: rgba(255, 255, 255, 0.8);
-    --dark-grey: rgba(255, 255, 255, 0.63);
-    --darker-grey: rgba(255, 255, 255, 0.44);
+    --main: var(--red);
+    --main-light: var(--darkred);
+    --main-dark: var(--black);
 
-    --main: #C9534B;
-    --main-light: #CE6A6A;
-    --main-dark: #8E3C4B; 
-
-    --break: #C9534B;
-    --break-light: #CE6A6A;
-    --break-dark: #8E3C4B;
-
-    --work: #4C948A;
-    --work-light: #7DB6A1;
-    --work-dark: #4A7C79;
-
-    --necess: #90A35B;
-    --necess-light: #BFB164;
-    --necess-dark: #6E824D;
-
-    --sleep: #393954; 
-    --sleep-light: #4E4B60;
-    --sleep-dark: #383841;
+    --break: var(--red);
+    --break-bg: var(--darkred);
+    --work: var(--blue);
+    --work-bg: var(--darkblue);
+    --necess: var(--green);
+    --necess-bg: var(--darkgreen);
+    --sleep: var(--purple); 
+    --sleep-bg: var(--darkpurple);
   }
 
 .theme-work {
-    --main: #4C948A;
-    --main-light: #7DB6A1;
-    --main-dark: #4A7C79;
+    --main: var(--work);
+    --main-light: var(--work-bg);
 }
 
 .theme-necess {
-    --main: #90A35B;
-    --main-light: #BFB164;
-    --main-dark: #6E824D;
+    --main: var(--necess);
+    --main-light: var(--necess-bg);
 }
 
 .theme-break {
-    --main: #C9534B;
-    --main-light: #CE6A6A;
-    --main-dark: #8E3C4B;
+    --main: var(--break);
+    --main-light: var(--break-bg);
 }
 
 .theme-sleep {
-    --main: #393954;
-    --main-light: #4E4B60;
-    --main-dark: #383841;
+    --main: var(--sleep);
+    --main-light: var(--sleep-bg);
 }
-
 
 
 body {
@@ -114,12 +111,12 @@ body {
 
 /* Placeholder text for text fields. */
 ::placeholder {
-    color: var(--darker-grey);
+    color: var(--grey);
     opacity: 1; /* Firefox */
 }
 
 ::-ms-input-placeholder { /* Edge 12 -18 */
-    color: var(--darker-grey);
+    color: var(--grey);
 }
 
 /* Hide the spinner buttons in Chrome, Safari, Edge, and Opera */
@@ -131,6 +128,23 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .container {
     position: relative;
+}
+
+.container {
+  width: 90%;
+  max-width: 860px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.site-header nav a {
+  margin-left: 1rem;
+  /* color: white; */
+  text-decoration: none;
+}
+
+.site-header img {
+  height: 24px;
 }
 
 .timer {
@@ -218,7 +232,7 @@ button {
 }
 
 .sleep-button {
-    background-color: var(--sleep-light);
+    background-color: var(--sleep-bg);
 }
 .sleep-button:active {
     background-color: var(--sleep-dark);

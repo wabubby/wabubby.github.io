@@ -1,0 +1,164 @@
+<!DOCTTYPE html>
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <title>1: What is SuperAnt? | Kevin Jin</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header class="site-header">
+  <!-- <div class="logo">
+  </div> -->
+  <a href="/", class="logo"><img src="/assets/img/kevin-jin-logo-website.png" alt="logo"></a>
+  
+  <nav>
+    
+    <a href="/">Home</a>
+    <a href="/articles/">Articles</a>
+    <a href="/about/">About</a>
+    <!-- <a href="/sands/">Sands</a> -->
+    <!-- <a href="https://twitter.com/yourprofile"><img src="/assets/img/twitter.svg"></a> -->
+    <!-- <a href="https://youtube.com/yourchannel"><img src="/assets/img/youtube.svg"></a> -->
+
+    <button id="theme-toggle">🌓</button>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+
+  // Load saved theme
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+        <main>
+            <article>
+
+    <div class="banner">
+        <img src="/assets/img/super-ant.png" alt="banner" class="banner-img">
+
+        <div class="banner-gradient"></div>
+
+        <div class="banner-content">
+
+            <h1 class="post-title">1: What is SuperAnt?</h1>
+            <p class="post-date">Nov 30, 2025 | by Kevin Jin</p>
+            <div class="post-tags">
+                
+                <a class="tag" href="/tags/superant/" class="post-tag">#superant</a>
+                
+                <a class="tag" href="/tags/tutorial/" class="post-tag">#tutorial</a>
+                
+                <a class="tag" href="/tags/devlog/" class="post-tag">#devlog</a>
+                
+            </div>
+
+        </div>
+    </div>
+    
+
+    <div class="post-content">
+        <p>Hello! Welcome to the <strong>SuperAnt</strong> development log! Seeing as this is the first one ever, an explanation is warranted:</p>
+
+<blockquote>
+  <p><em>SuperAnt is a <strong>fast</strong>-moving, <strong>combat</strong>-centric, <strong>retro</strong>-styled <strong>metroidvania</strong>. You explore a rogue planet, driven by bloodlust and your search for an ontological superweapon. Blitz enemies in close-quarters with <strong>gauntlets</strong> as you piece together your arsenal and purpose in the universe.</em></p>
+</blockquote>
+
+<p>Okay. Hmmm.</p>
+
+<p>I think this is a decent description, and I’ll probably put something similar on a steam page. However you, yes <strong>you</strong>, the person reading a <strong>development blog</strong> probably think this description is too simple and reductive. So here’s my description of the game for you:</p>
+
+<blockquote>
+  <p><em>In an open-world metroidvania filled with <strong>odd secrets</strong> and <strong>vicious monsters</strong>, SuperAnt is about mastering hidden movement and combat <strong>techniques</strong> to <strong>overpower</strong> and <strong>outspeed</strong> your problems. Kill monsters that should be untouchable and bridge impossible gaps that lead to hidden places.</em></p>
+</blockquote>
+
+<p>What does it mean to uncover movement and combat techniques? In SuperAnt, you’ll gain abilities which may actually have many secret functions. For example, the <strong>Shell upgrade</strong> first serves as a <strong>Shield</strong>, increasing your defense at the cost of your movement control. It’s a useful ability in a game where your health regularly dips.</p>
+
+<figure>
+  <img src="/assets/vid/TheShellShield.gif" />
+  <figcaption><i>Blocking Attacks with the Shell</i></figcaption>
+</figure>
+
+<p>However, experimentation will reveal many <strong>powerful secondary functions</strong> that will transform a player’s understand of combat and traversal:</p>
+
+<ul>
+  <li><strong>Roll</strong>: You can transfer your velocity between forms, allowing you to roll and gain immense speed.</li>
+</ul>
+
+<figure>
+  <img src="/assets/vid/TheShellRoll.gif" />
+  <figcaption><i>Rolling down a small hill.</i></figcaption>
+</figure>
+
+<ul>
+  <li><strong>Bash</strong>: Hitting enemies with the Shell in the air will do damage based on your speed.</li>
+</ul>
+
+<figure>
+  <img src="/assets/vid/TheShellBash.gif" />
+  <figcaption><i>Bashing a Kian to death.</i></figcaption>
+</figure>
+
+<ul>
+  <li><strong>Bounce</strong>: The shell will bounce off floors and walls, allowing you to instantly redirect your velocity or turn stomps into massive leaps.</li>
+</ul>
+
+<figure>
+  <img src="/assets/vid/TheShellBounce.gif" />
+  <figcaption><i>Bouncing into the air</i></figcaption>
+</figure>
+
+<ul>
+  <li><em>And more but I’m not telling youuuu</em></li>
+</ul>
+
+<p>…and that’s because the main appeal of SuperAnt is these <strong>discovery of secret abilities</strong>. While many games hide or patch techniques for the consistency of predictable mechanics, the uncovery of these hidden abilities have always been my favourite video game experiences.</p>
+
+<p>It’s a crazy, chaotic quality you find in systems-driven, synergistic games like Noita, Spelunky, Caves of Qud, Mosa Lina, or Ultrakill.</p>
+
+<p>Over the course of SuperAnt, every player’s tiny revelations should amount to personal techniques and a unique playstyle. The gameplay of SuperAnt evolves based on the player’s ingenuity.</p>
+
+<p><em>That</em> is my goal for SuperAnt.</p>
+
+<p><strong>Thanks for reading!</strong></p>
+
+<hr />
+
+<p>For now, I’m planning to release a devblog weekly. I’ll be very transparent with my development process, outlining my design ideas and development strategies. Pixel animation, programming patterns, sound design, it’ll all be here! If that interests you, I’ll be updating the blog every monday!</p>
+
+<p>If you got any questions:</p>
+<ul>
+  <li>email: <strong>@kevinjin729@gmail.com</strong></li>
+  <li>or, if that’s not your style: friend me on discord <strong>@wabubby</strong></li>
+</ul>
+
+    </div>
+
+</article>
+        </main>
+
+        <footer class="site-footer">
+    Made by Kevin Jin.
+    © 2025 Kevin Jin
+</footer>
+
+    </body>
+</html>

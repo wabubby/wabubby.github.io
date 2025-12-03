@@ -1,16 +1,23 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sands</title>
-    <link rel="stylesheet" href="styles/styles.css"/>
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap">
 </head>
+
+{% include header.html %}
+
 <body>
     <!-- Modal Comics :D -->
-    <div id="modal1" class="modal">
+    <!-- <div id="modal1" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close" onclick="closeModal()">&times;</span>
@@ -102,7 +109,7 @@
                 <button onclick="closeModal(3)" class="next-button">Alright.</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
         <canvas id="simulation-canvas" class="simulation-canvas"> </canvas>

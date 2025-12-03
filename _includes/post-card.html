@@ -1,0 +1,10 @@
+<div class="post-card">
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <p>{{ post.date | date: "%b %d, %Y" }} | {{ post.author }}</p>
+  
+  <div class="post-tags">
+    {% for tag in post.tags %}
+      <a class="tag" href="/tags/{{ tag }}/">#{{ tag }}</a>
+    {% endfor %}
+  </div>
+</div>

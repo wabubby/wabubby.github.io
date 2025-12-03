@@ -65,13 +65,13 @@ class Particle {
   getColor() {
     switch (this.id) {
       case 0:
-        return this.variate("#4C948A");
+        return this.variate("#27cbf3");
       case 1:
-        return this.variate("#90A35B");
+        return this.variate("#2ded7a");
       case 2:
-        return this.variate("#c94b62");
+        return this.variate("#f91d5a");
       case 3:
-        return this.variate("#393954");
+        return this.variate("#be55f2");
       default:
         return "#000000";
     }
@@ -88,9 +88,9 @@ class Particle {
     var B = parseInt(hexstring.substring(5,7),16);
     var kevin_sucks = 124;
 
-    R = Math.min(Math.floor(R+Math.random()*40-20), 255);
-    G = Math.min(Math.floor(G+Math.random()*40-20), 255);
-    B = Math.min(Math.floor(B+Math.random()*40-20), 255);
+    R = Math.min(Math.floor(R+Math.random()*10-5), 255);
+    G = Math.min(Math.floor(G+Math.random()*10-5), 255);
+    B = Math.min(Math.floor(B+Math.random()*10-5), 255);
 
     return this.rgbToHex(R, G, B);
   }

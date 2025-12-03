@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h1><a href="/articles/">Articles</a> Tagged: <a class="tag" href="/tags/{{ page.tag }}/">#{{ page.tag }}</a></h1>
+
+{% for post in site.posts %}
+  {% if post.tags contains page.tag %}
+    {% include post-card.html %}
+  {% endif %}
+{% endfor %}

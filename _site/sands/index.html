@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sands</title>
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap">
+</head>
+
+<header class="site-header">
+  <!-- <div class="logo">
+  </div> -->
+  <a href="/", class="logo"><img src="/assets/img/kevin-jin-logo-website.png" alt="logo"></a>
+  
+  <nav>
+    
+    <a href="/">Home</a>
+    <a href="/articles/">Articles</a>
+    <a href="/about/">About</a>
+    <!-- <a href="/sands/">Sands</a> -->
+    <!-- <a href="https://twitter.com/yourprofile"><img src="/assets/img/twitter.svg"></a> -->
+    <!-- <a href="https://youtube.com/yourchannel"><img src="/assets/img/youtube.svg"></a> -->
+
+    <button id="theme-toggle">🌓</button>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+
+  // Load saved theme
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+<body>
+    <!-- Modal Comics :D -->
+    <!-- <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="centered-content">
+                <p>Hi! My name is Kevin Jin and welcome to Sands, Alpha version 1.1!</p>
+                <img src="assets/sprites/comics/panel-1.png">
+                <button onclick="showModal(2)" class="next-button">Hi.</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="centered-content">
+                <p>Sands is a time management tool where every second is visualised as a single grain of sand.</p>
+                <img src="assets/sprites/comics/panel-2.png">
+                <button onclick="showModal(3)" class="next-button">Sounds excessive.</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="centered-content">
+                <p>There's tons of ways to use it!</p>
+                <img src="assets/sprites/comics/panel-3.png">
+                <button onclick="showModal(4)" class="next-button">Like...</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="centered-content">
+                <p>Maybe, you want a comprehensive look of your entire day.</p>
+                <img src="assets/sprites/comics/panel-4.png">
+                <button onclick="showModal(5)" class="next-button">Sure.</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="centered-content">
+                <p>Or, you just want to hunker down for a single study session.</p>
+                <img src="assets/sprites/comics/panel-5.png">
+                <button onclick="showModal(6)" class="next-button">Perhaps.</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="centered-content">
+                <p>Or maybe you just need a kitchen timer. (whatevs floats your boat)</p>
+                <img src="assets/sprites/comics/panel-6.png">
+                <button onclick="showModal(7)" class="next-button">...</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="centered-content">
+                <p>Either way, you're using Sands at it's best when you analyze how you spend your time. </p>
+                <img src="assets/sprites/comics/panel-7.png">
+                <button onclick="showModal(8)" class="next-button">Got it.</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <div class="centered-content">
+                <p>After all, every one of your seconds is precious.</p>
+                <img src="assets/sprites/comics/panel-8.png">
+                <button onclick="closeModal(3)" class="next-button">Alright.</button>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <canvas id="simulation-canvas" class="simulation-canvas"> </canvas>
+
+        <div class="rectangle" style="position: absolute; top: 0px; left: 0px;">
+            <form>
+                <div class="alarm-container">
+                    <input type="text" id="alarm-input" class="alarm" placeholder="ALARM" autocomplete="off">
+                </div>
+            </form>
+            <div id="timer" class="timer">0:00</div>
+            <form>
+                <div class="goal-container">
+                    <input type="text" id="goal-input" class="goal" placeholder="GOAL" autocomplete="off">
+                </div>
+            </form>
+        </div>
+        <div class="buttons">
+            <button id="work" class="work-button">Work</button>
+            <button id="necess" class="necess-button">Eat</button>
+            <button id="break" class="break-button">Break</button>
+            <button id="sleep" class="sleep-button">Sleep</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Library Code -->
+<!-- <script src="scripts/timer.js"></script> -->
+<script src="scripts/toggle-theme.js"></script>
+<script src="scripts/prevent-field-enter.js"></script>
+<script src="scripts/comic.js"></script>
+
+<!-- Main Code -->
+<script src="scripts/app.js"></script>

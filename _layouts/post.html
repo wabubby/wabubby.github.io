@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article>
+
+    <div class="banner">
+        <img src="{{ page.image  | default: '/assets/img/super-ant.png' }}" alt="banner" class="banner-img">
+
+        <div class="banner-gradient"></div>
+
+        <div class="banner-content">
+
+            <h1 class="post-title">{{ page.title }}</h1>
+            <p class="post-date">{{ page.date | date: "%b %d, %Y" }} | by {{ page.author }}</p>
+            <div class="post-tags">
+                {% for tag in page.tags %}
+                <a class="tag" href="/tags/{{ tag }}/" class="post-tag">#{{ tag }}</a>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+</article>

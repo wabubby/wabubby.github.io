@@ -1,0 +1,22 @@
+title: "Kevin Jin"
+description: "Game Developer & Creator of SuperAnt"
+# url: ""   # set later when you add domain
+# baseurl: ""
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  tags:
+    output: true
+
+permalink: /articles/:title/
+
+# Tag pages generator config
+defaults:
+  - scope:
+      path: "tags"
+    values:
+      layout: "tag"
