@@ -6,142 +6,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sands</title>
-    <link rel="stylesheet" href="/assets/css/styles.css"/>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap">
+    <title>Sands Time Management</title>
+    
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 </head>
 
-{% include header.html %}
 
 <body>
-    <!-- Modal Comics :D -->
-    <!-- <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="centered-content">
-                <p>Hi! My name is Kevin Jin and welcome to Sands, Alpha version 1.1!</p>
-                <img src="assets/sprites/comics/panel-1.png">
-                <button onclick="showModal(2)" class="next-button">Hi.</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="centered-content">
-                <p>Sands is a time management tool where every second is visualised as a single grain of sand.</p>
-                <img src="assets/sprites/comics/panel-2.png">
-                <button onclick="showModal(3)" class="next-button">Sounds excessive.</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="centered-content">
-                <p>There's tons of ways to use it!</p>
-                <img src="assets/sprites/comics/panel-3.png">
-                <button onclick="showModal(4)" class="next-button">Like...</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="centered-content">
-                <p>Maybe, you want a comprehensive look of your entire day.</p>
-                <img src="assets/sprites/comics/panel-4.png">
-                <button onclick="showModal(5)" class="next-button">Sure.</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="centered-content">
-                <p>Or, you just want to hunker down for a single study session.</p>
-                <img src="assets/sprites/comics/panel-5.png">
-                <button onclick="showModal(6)" class="next-button">Perhaps.</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="centered-content">
-                <p>Or maybe you just need a kitchen timer. (whatevs floats your boat)</p>
-                <img src="assets/sprites/comics/panel-6.png">
-                <button onclick="showModal(7)" class="next-button">...</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal7" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="centered-content">
-                <p>Either way, you're using Sands at it's best when you analyze how you spend your time. </p>
-                <img src="assets/sprites/comics/panel-7.png">
-                <button onclick="showModal(8)" class="next-button">Got it.</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal8" class="modal">
-        <div class="modal-content">
-            <div class="centered-content">
-                <p>After all, every one of your seconds is precious.</p>
-                <img src="assets/sprites/comics/panel-8.png">
-                <button onclick="closeModal(3)" class="next-button">Alright.</button>
-            </div>
-        </div>
-    </div> -->
+    {% include header.html %}
+    
+    <div class="content">
+        <canvas id="simulation"> </canvas>
 
-    <div class="container">
-        <canvas id="simulation-canvas" class="simulation-canvas"> </canvas>
+        <input type="text" id="alarm-input" placeholder="ALARM" autocomplete="off">
+        <h1 id="timer">0:00</h1>
+        <input type="text" id="goal-input" placeholder="GOAL" autocomplete="off">
 
-        <div class="rectangle" style="position: absolute; top: 0px; left: 0px;">
-            <form>
-                <div class="alarm-container">
-                    <input type="text" id="alarm-input" class="alarm" placeholder="ALARM" autocomplete="off">
-                </div>
-            </form>
-            <div id="timer" class="timer">0:00</div>
-            <form>
-                <div class="goal-container">
-                    <input type="text" id="goal-input" class="goal" placeholder="GOAL" autocomplete="off">
-                </div>
-            </form>
+        <div id="theme-buttons"> </div>
+
+        <div id="settings-buttons">
+            <button id="settings-button"> <img src="/assets/img/wrench-icon.png"> </button>
+            <button id="info-button"> <img src="/assets/img/info-icon.png"> </button>
         </div>
-        <div class="buttons">
-            <button id="work" class="work-button">Work</button>
-            <button id="necess" class="necess-button">Eat</button>
-            <button id="break" class="break-button">Break</button>
-            <button id="sleep" class="sleep-button">Sleep</button>
+
+    </div>
+
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <h2>What is Sands?</h2>
+            <p><b>Sands</b> is a Time-Management tool where every second is visualized as a <b>grain of sand</b>.</p>
+                
+            <p>It's a tool I made for myself to be more concious of how the way I spend my time. Personally, I use <span style="color: #27cbf3;">blue</span> for work, <span style="color: #f91d5a;">red</span> for fun, and <span style="color: #2ded7a;">green</span> for those necessary breaks like eating or walks.</p>
+
+            <p>It's pretty open ended. You can use it for studying, cooking, or just to feel that nice existential dread as the sands fall down.</p>
+
+            <p>Personally, I use the Sands as way to analyze my time use. After all, every one of those seconds is precious...</p>
+
         </div>
     </div>
+
+    <div id="theme-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Theme</h2>
+            <label>Main Color: <input type="text" id="theme-main" placeholder="e.g. #000000"> </label>
+            <label>Alt Color: <input type="text" id="theme-aux" placeholder="e.g. #000000"> </label>
+            <label>Background Color: <input type="text" id="theme-bg" placeholder="e.g. #ffffff"> </label>
+
+            <button id="save-theme">Add Theme</button>
+            <button id="close-modal" class="close-btn">Cancel</button>
+        </div>
+    </div>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <label>Grains Per Second[1,100] - Reload Page to take effect: <input type="number" id="spawn-rate"></label>
+
+            <h3>Delete Themes</h3>
+            <div id="delete-theme-list"></div>
+
+            <button id="restore-default-themes" style="display:none;">
+                ...It seems you deleted everything. Restore Default Themes?
+            </button>
+        </div>
+    </div>
+    
+    <script src="scripts/prevent-field-enter.js"></script>
+    <script src="scripts/sand-simulation.js"></script>
+
 </body>
 </html>
-
-<!-- Library Code -->
-<!-- <script src="scripts/timer.js"></script> -->
-<script src="scripts/toggle-theme.js"></script>
-<script src="scripts/prevent-field-enter.js"></script>
-<script src="scripts/comic.js"></script>
-
-<!-- Main Code -->
-<script src="scripts/app.js"></script>

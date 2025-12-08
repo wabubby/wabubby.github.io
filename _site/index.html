@@ -16,8 +16,6 @@
     <body>
 
         <header class="site-header">
-  <!-- <div class="logo">
-  </div> -->
   <a href="/", class="logo"><img src="/assets/img/kevin-jin-logo-website.png" alt="logo"></a>
   
   <nav>
@@ -25,9 +23,7 @@
     <a href="/">Home</a>
     <a href="/articles/">Articles</a>
     <a href="/about/">About</a>
-    <!-- <a href="/sands/">Sands</a> -->
-    <!-- <a href="https://twitter.com/yourprofile"><img src="/assets/img/twitter.svg"></a> -->
-    <!-- <a href="https://youtube.com/yourchannel"><img src="/assets/img/youtube.svg"></a> -->
+    <a href="/sands/">Sands</a>
 
     <button id="theme-toggle">🌓</button>
   </nav>
@@ -35,8 +31,7 @@
 
 <script>
   const toggle = document.getElementById('theme-toggle');
-
-  // Load saved theme
+  
   const saved = localStorage.getItem('theme');
   if (saved) {
     document.documentElement.setAttribute('data-theme', saved);
@@ -58,7 +53,7 @@
                 <p><small>^ stuffies up here ^</small></p>
 
                 <p class="home-title">Hi, I'm</p>
-                <h1 class="home-title">Kevin Jin</h1>
+                <h1 class="home-title"> <span style="color: var(--red);">Kev<span style="color: var(--darkred);">i</span>n </span> <span style="color: var(--blue);">J<span style="color: var(--darkblue);">i</span>n</span> </h1>
                 <p class="home-title">(Welcome to my site!)</p>
 
                 <!-- <hr> -->
@@ -66,29 +61,44 @@
                 <div class="very-useful-decoratorative-rectangle"></div>
                 
                 <div class="featured-container">
-                    <p class="featured-article">Latest Articles:</p>
-                    
+                    <p class="featured-article">Featured Article:</p>
+                    <!-- 
                         <div class="post-card">
-  <h2><a href="/articles/what-is-superant/">1: What is SuperAnt?</a></h2>
+  <h2><a href="/articles/how-make-a-site/" class="post-title">2: Making a Personal Site</a></h2>
+  <p>Dec 05, 2025 | Kevin Jin</p>
+  
+  <div class="post-tags">
+    
+      <a class="tag" href="/tags/devlog/">#devlog</a>
+    
+      <a class="tag" href="/tags/tutorial/">#tutorial</a>
+    
+  </div>
+</div>
+                     -->
+
+                    
+                        
+                    
+                        
+                            <div class="post-card">
+  <h2><a href="/articles/what-is-superant/" class="post-title">1: What is SuperAnt?</a></h2>
   <p>Nov 30, 2025 | Kevin Jin</p>
   
   <div class="post-tags">
     
       <a class="tag" href="/tags/superant/">#superant</a>
     
-      <a class="tag" href="/tags/tutorial/">#tutorial</a>
-    
       <a class="tag" href="/tags/devlog/">#devlog</a>
     
   </div>
 </div>
+                        
                     
                 </div>
             </div>
 
         </div>
-
-        <!-- <script src="/assets/scripts/home-parallax.js"></script> -->
 
     </body>
 </html>

@@ -4,6 +4,16 @@ layout: default
 
 <article>
 
+    <nav class="post-nav">
+        {% if page.previous %}
+            <a class="post-nav-button prev" href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
+        {% endif %}
+
+        {% if page.next %}
+            <a class="post-nav-button next" href="{{ page.next.url }}">{{ page.next.title }} →</a>
+        {% endif %}
+    </nav>
+    
     <div class="banner">
         <img src="{{ page.image  | default: '/assets/img/super-ant.png' }}" alt="banner" class="banner-img">
 
@@ -21,10 +31,20 @@ layout: default
 
         </div>
     </div>
-    
+            
 
     <div class="post-content">
         {{ content }}
     </div>
+
+    <nav class="post-nav">
+        {% if page.previous %}
+            <a class="post-nav-button prev" href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
+        {% endif %}
+
+        {% if page.next %}
+            <a class="post-nav-button next" href="{{ page.next.url }}">{{ page.next.title }} →</a>
+        {% endif %}
+    </nav>
 
 </article>

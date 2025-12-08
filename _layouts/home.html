@@ -25,7 +25,7 @@
                 <p><small>^ stuffies up here ^</small></p>
 
                 <p class="home-title">Hi, I'm</p>
-                <h1 class="home-title">Kevin Jin</h1>
+                <h1 class="home-title"> <span style="color: var(--red);">Kev<span style="color: var(--darkred);">i</span>n </span> <span style="color: var(--blue);">J<span style="color: var(--darkblue);">i</span>n</span> </h1>
                 <p class="home-title">(Welcome to my site!)</p>
 
                 <!-- <hr> -->
@@ -33,16 +33,20 @@
                 <div class="very-useful-decoratorative-rectangle"></div>
                 
                 <div class="featured-container">
-                    <p class="featured-article">Latest Articles:</p>
-                    {% for post in site.posts limit:1 %}
+                    <p class="featured-article">Featured Article:</p>
+                    <!-- {% for post in site.posts limit:1 %}
                         {% include post-card.html %}
+                    {% endfor %} -->
+
+                    {% for post in site.posts %}
+                        {% if forloop.index == site.posts.size %}
+                            {% include post-card.html post=post %}
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
 
         </div>
-
-        <!-- <script src="/assets/scripts/home-parallax.js"></script> -->
 
     </body>
 </html>

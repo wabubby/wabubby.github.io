@@ -1,0 +1,271 @@
+<!DOCTTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="icon" href="/assets/img/tab-icon.png">
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <title>2: Making a Personal Site | Kevin Jin</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header class="site-header">
+  <a href="/", class="logo"><img src="/assets/img/kevin-jin-logo-website.png" alt="logo"></a>
+  
+  <nav>
+    
+    <a href="/">Home</a>
+    <a href="/articles/">Articles</a>
+    <a href="/about/">About</a>
+    <a href="/sands/">Sands</a>
+
+    <button id="theme-toggle">🌓</button>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+        <main>
+            <article>
+
+    <nav class="post-nav">
+        
+            <a class="post-nav-button prev" href="/articles/what-is-superant/">← 1: What is SuperAnt?</a>
+        
+
+        
+    </nav>
+    
+    <div class="banner">
+        <img src="/assets/img/figma-design.png" alt="banner" class="banner-img">
+
+        <div class="banner-gradient"></div>
+
+        <div class="banner-content">
+
+            <h1 class="post-title">2: Making a Personal Site</h1>
+            <p class="post-date">Dec 05, 2025 | by Kevin Jin</p>
+            <div class="post-tags">
+                
+                <a class="tag" href="/tags/devlog/" class="post-tag">#devlog</a>
+                
+                <a class="tag" href="/tags/tutorial/" class="post-tag">#tutorial</a>
+                
+            </div>
+
+        </div>
+    </div>
+            
+
+    <div class="post-content">
+        <p>This blog is dedicated to my bro <strong>Michael Mo</strong>, who asked to me how to make a artist portfolio site. So I thought it would be nice to organize a basic explanation and summary of how I built my own static site.</p>
+
+<p><small> <em>By the way, his IP address is 104.24.218.256, he lives on 180 HoneyCrisp Avenue, and he attends Queens University in Kingston, Ontario. Alright, let’s begin!</em> </small></p>
+
+<h1 id="what-is-a-website">What is a Website?</h1>
+<p>Before you can make a website, you gotta know what a website even is. But when I asked Michael what <strong>HTML</strong> is, he said it was a <strong>programming language</strong>. So yeah… we gotta start from the top.</p>
+
+<p>Let’s make this quick and simple. A <strong>website</strong> is a <strong>set of files served</strong> from a server’s IP address. A <strong>server</strong> is just any computer distributing resources over the net. Generally, every website will serve four types of files:</p>
+
+<h2 id="1-html-hyper-text-markup-language">1. HTML (Hyper-Text Markup Language).</h2>
+<p><strong>HTML</strong> is a <strong>markup language</strong> that defines the <strong>structure</strong> of a site’s elements: the text, the images, the buttons.</p>
+
+<p>Here’s <strong>this page’s html file</strong>! Take a look.</p>
+<figure>
+  <img src="/assets/img/html.png" />
+  <figcaption><i>how-to-make-a-site/index.html</i></figcaption>
+</figure>
+<p>Notice that the format of HTML is text nested in <strong>&lt;tags&gt;</strong>. The plaintext is the actual content of the site, while the <strong>&lt;tags&gt;</strong> define the purpose of that content.</p>
+
+<p>For example the tag “<strong>&lt;p&gt;</strong>” says: this text is a paragraph!<br />
+“<strong>&lt;b&gt;</strong>” says: make this text bold!<br />
+“<strong>&lt;video&gt;</strong>” says: put a video here with this source!</p>
+
+<p>But a lot of them like <strong>&lt;div&gt;</strong> or <strong>&lt;article&gt;</strong> actually do nothing but organize. This is helpful to debug html files or apply specific styles to certain pieces of text, like make all titles red.</p>
+
+<h2 id="2-css-cascading-style-sheets">2. CSS (Cascading Style Sheets)</h2>
+<p><strong>CSS files</strong> define the <strong>style</strong> for different html elements based on their <strong>tags</strong>. To demonstrate the importance of style, here is what my page looks likes <strong>WITHOUT STYLE.CSS</strong>.</p>
+<figure>
+  <img src="/assets/img/no-html.png" />
+  <figcaption><i>no css?</i></figcaption>
+</figure>
+
+<p>…yUCky!</p>
+
+<p>While HTML files define the ingredients of the site, CSS files are like the <strong>chef that cooks them into actually nice</strong>. CSS makes the backgrounds black, my links cyan, organizes my header, and sets the text size and font on my site.</p>
+
+<h2 id="3-javascript">3. JavaScript</h2>
+<p><strong>JavaScript</strong> is the <strong>programming language</strong> used for websites. While CSS and HTML are formatting languages, Javascript enables logic and interactivity.</p>
+
+<p>Javascript can be used to make <strong>games</strong>, <strong>surveys</strong>, and <strong>viruses</strong> that mine bitcoin! Basically, if you need to do anything beyond the basic structure and format of your site, it’s time to learn javascript.</p>
+
+<p>But since most of these pages are articles, I don’t really need anything crazy. Besides the dark/light mode toggle found in the header, javascript is present on my <a href="\sands">Time Management Webapp</a>.</p>
+
+<h2 id="4-assets">4. Assets</h2>
+<p><strong>Assets files</strong> are the <strong>images</strong>(.png .gif etc.), <strong>videos</strong>(.mp4 .mov), <strong>fonts</strong>(.ttf), and <strong>audio</strong>(.ogg) embedded into your site. That was quick.</p>
+
+<figure>
+    <img src="/assets/img/pallas-cat.webp" />
+    <figcaption><i>i love them so much</i></figcaption>
+</figure>
+
+<p><br /></p>
+
+<h1 id="why-are-there-so-many-web-development-tools">Why are there so many Web-Development Tools?</h1>
+
+<p>Technically, you don’t need anything more than <strong>notepad.exe</strong> and the <strong>NIC</strong>(Network Interface Controller) glued on your motherboard to make and host a website. But then those damn developers had to overcomplicate things by trying to automate the everything.</p>
+
+<p>Now, there’s a <strong>tool</strong>, <strong>package</strong>, and <strong>service</strong> for anything in web development. React, Next, Babel, tailwind, Strapi, Firebase, Prisma, Vercel, Docker, Squarespace, etc. etc. etc. Some tools like Google Sites or Wordpress enable people to make sites without even knowing HTML stands for.</p>
+
+<p>All of this stuff can make approaching web development very overwhelming. There is no “right setup”, just a million different workflow variations for the infinite kinds of sites people make. We can spend years looking at all these tools and their applications.</p>
+
+<p>So instead, I’ll just tell you what I did.</p>
+
+<p><br /></p>
+
+<h1 id="my-websites-setup">My Website’s Setup</h1>
+
+<p>My philosophy is to keep things as <strong>minimalist as I can</strong>. The more tools you have, the more documentation you have to read, the more you have to be worried about versions and conflicts, and the more my brain hurts.</p>
+
+<p>Plus, being closer to the actual languages that make up a site allows you more understanding and control over it.</p>
+
+<p>So, I only used <strong>three tools</strong> to make this site. <a href="https://www.figma.com/">Figma</a> for designing mockups, <a href="https://jekyllrb.com/">Jekyll</a> to generate articles from markdown files, and <a href="https://porkbun.com/">Porkbun</a> to purchase and maintain my domain.</p>
+
+<p>I started off making my website by browsing sites and jotting down what design features I like:</p>
+
+<ul>
+  <li><strong>Minimal Style.</strong> I found websites with lots of animations and background images overwhelming. A minimal look brings focus to the text.</li>
+  <li><strong>Big Letters and Whitespace.</strong> 20 point font, 1.2x line height, and big margins on either side help readibility.</li>
+  <li><strong>Technology Theme.</strong> The colors and fonts inform the purpose of the site. Darkmode and mono-serif fonts imply that this is a development blog.</li>
+  <li><strong>Tagging System</strong> A lot of blogs have horrific organization. There’s often no way to filter articles, requiring you to flip between 30 pages of posts. I want all my articles to visible on a single page that can be filtered by tag.</li>
+</ul>
+
+<p>I then went off to <strong>Figma</strong>, playing around with different <strong>fonts</strong>, background <strong>colors</strong>, and <strong>layouts</strong>. Figma is a simple design app to prototype projects, especially sites. Also, tt’s free if you’re a student!</p>
+
+<figure>
+    <img src="/assets/img/figma.png" />
+    <figcaption><i>mockups in Figma</i></figcaption>
+</figure>
+
+<p>After too much time toying around, I settled on the <strong>terminal-look</strong> of pure <strong>black/white</strong> with <strong>red</strong>. Today, I added <strong>cyan as a secondary colour</strong> to diffrentiate <strong>links</strong> while maintaining its professional appearance. I chose <strong>Inconsolata</strong> as a pleasing body font and <strong>Fira Sans</strong> for some blockier headers.</p>
+
+<figure>
+    <img src="/assets/img/site.png" />
+    <figcaption><i>the site as of 2025-12-05 4:12:41 PM</i></figcaption>
+</figure>
+
+<p>A few hours slapping HTML and CSS on my keyboard, and the website was technically done. I had the style down and the navigation between pages.</p>
+
+<p>However this basic setup made <strong>adding new articles very annoying</strong>. Making new html files for every blog post is pretty repetitive since every post has the same layout. Ideally, all I would have to write is a <a href="https://en.wikipedia.org/wiki/Markdown">Markdown File</a> that would get <strong>automatically converted into HTML</strong>.</p>
+
+<p>Time to reintroduce my second tool, <a href="https://jekyllrb.com/">Jekyll</a>! <strong>Jekyll</strong> can take those markdown files then feed it through my article layout to <strong>generate HTML files</strong>. Plus, Jekyll is lightweight, open-source, efficient, and works well with <a href="https://docs.github.com/en/pages">Github Pages</a>, which I use to host this site because I’m a cheap bum!</p>
+
+<figure>
+    <img src="/assets/img/Sprite-0002.png" />
+    <figcaption><i>Jekyll automates this.</i></figcaption>
+</figure>
+
+<p>Now I can easily and quickly write down articles in markdown that get automatically turned into pages on my site!</p>
+
+<p>Finally, I needed a domain. After some reddit searches for how to get a domain I learned two things. One: <a href="https://porkbun.com/">Porkbun</a> and <a href="https://www.cloudflare.com/">Cloudflare</a> are cheap and well liked. Two: D̶̩̕Ǒ̶̫ ̵̨̕Ñ̷̝Ó̴͇T̵̲́ ̵̯͝U̶͙̓S̴̳͐E̷̗͂ <a href="https://www.godaddy.com/">̴̔͜G̵͖̊Ȍ̸̦D̷͆ͅA̸̞͆D̶̬̄D̴̤̉Y̵̞̔</a>. I decided to go with Porkbun for my site, my third and final external tool.</p>
+
+<p>Unforunately, some imposter punk from Michigan already stole my desired domain, <strong>kevinjin.dev</strong> so I settled for <strong>kevinjin.net</strong>, on Porkbun for <strong>12 dollars CAD/year</strong>. Pretty good deal!</p>
+
+<p>If you’re not bored already, here’s a bonus section!</p>
+
+<h2 id="designing-my-logo">Designing My Logo</h2>
+<p>I can change the logo whenever I want, but I’m not going to let it be ugly right now. Ever since I got an iPad for university, I’ve been using Procreate instead of a sketchbook for mockups. I started off with the unsophisticated idea of putting my name on monitor:</p>
+
+<figure>
+    <div class="gallery">
+        <img src="/assets/img/space-age-monitor.jpg" />
+        <img src="/assets/img/logo-draft-monitor.png" />
+    </div>
+    <figcaption><i>i was inspired by funky space-age monitors</i></figcaption>
+</figure>
+
+<p>However the rectangular design was <strong>boring</strong> and the circular design’s <strong>text was too small</strong> for my liking. Dang, now I gotta think of someething else.</p>
+
+<p>So I decided to include my <strong>gamertag</strong> namesake, <strong>Wabubby the dog</strong>. He’s a funny blue dawg with a long tongue and floppy tophat, originally scribbled on my math homework by a friend.</p>
+
+<figure>
+    <div class="gallery">
+        <img src="/assets/img/wabubby1.png" />
+        <img src="/assets/img/wabubby2.png" />
+        <img src="/assets/img/wabubby3.png" />
+    </div>
+    <figcaption><i>Wabubby, the Dawg</i></figcaption>
+</figure>
+
+<figure>
+    <img src="/assets/img/logo-draft-dog.png" />
+    <img src="/assets/img/logo-draft-1.png" />
+    <figcaption><i>Mambo No.3</i></figcaption>
+</figure>
+
+<p>I sketched it out and thought it was passable. But after rendering it into pixel art, It was pretty damn ugly. It was so lifeless. Wabubby had lost all its <strong>pizazz</strong>, its vitality. It felt like I flayed a beloved corporate mascot through <strong>gruesome oversimplification</strong>.</p>
+
+<p>Plus, it kinda looked like it was getting shot in the mouth with a lazer rather than a tongue.</p>
+
+<figure>
+    <img src="/assets/img/logo-draft-2.png" />
+    <figcaption><i>I was suddenly struck with genius</i></figcaption>
+</figure>
+
+<p>So let’s open them jaws, give em a smile, and change the perspective. Wait a second, I can transform “JIN” into the caricature of the dog!</p>
+
+<figure>
+    <img src="/assets/img/logo-draft-3.png" />
+    <figcaption><i>The Final Product</i></figcaption>
+</figure>
+
+<p>After that, I knew I was cooking. This way, I can also change my first name while still perserving my last name. That’s not a joke by the way. Too many Kevin Jins in this world. If I want more brand recognition, I need cooler name, like Hideous or Ripper.</p>
+
+<p><small> <em>If Michael is reading this right now you can stop reading and ask Kevin to start now.</em> </small></p>
+
+<hr />
+
+<p>If you got any questions/wanna tell me sumthin:</p>
+<ul>
+  <li>email: <strong>kevinjin729@gmail.com</strong></li>
+  <li>or, if that’s not your style: friend me on discord <strong>@wabubby</strong></li>
+</ul>
+
+    </div>
+
+    <nav class="post-nav">
+        
+            <a class="post-nav-button prev" href="/articles/what-is-superant/">← 1: What is SuperAnt?</a>
+        
+
+        
+    </nav>
+
+</article>
+        </main>
+
+        <footer class="site-footer">
+    Made by Kevin Jin.
+    © 2025 Kevin Jin
+</footer>
+
+    </body>
+</html>

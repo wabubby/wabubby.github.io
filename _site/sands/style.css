@@ -1,0 +1,316 @@
+/*
+MARK: IMPORTED RULES
+*/
+
+/* @import "/assets/css/style.css"; */
+/* we don't want to directly import all the rules because we want this webapp's style to be consistent */
+
+:root {
+  --void: #000000;
+  --black: #111111;
+  --gray: #424242;
+  --grey: #D8D8D8;
+  --white: #ffffff;
+  --red: #f91d5a;
+  --darkred: #BE0A61;
+  --blue: #1DF9C6;
+  --darkblue: #219E9E;
+
+  --text-color: var(--grey);
+  --background-color: var(--black);
+  --header-background: var(--void);
+  --header-title: var(--white);
+
+  font-family: "Inconsolata", monospace;
+  font-size: 18px;
+}
+
+[data-theme='light'] {
+  --text-color: var(--gray);
+  --background-color: var(--white);
+  --header-background: var(--void);
+  --header-title: var(--void);
+}
+
+body {
+  background: var(--background-color);
+  margin: 0;
+  padding: 0;
+  
+  /* inheriting properties */
+  color: var(--text-color);
+  line-height: 1.7;
+  font-weight: 350;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--darkblue);
+  text-decoration: underline;
+}
+
+b, strong {
+  color: var(--red);
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fira Sans", monospace;
+  color: var(--header-title);
+  margin-top: 0.5em;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.site-header, .site-footer {
+  background: var(--header-background);
+  padding: 1rem 2rem;
+
+  /* flexbox cuz im lazy */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header nav a {
+  margin-left: 1rem;
+}
+
+.site-header .logo img {
+  display: block;
+  height: 64px;
+}
+
+#theme-toggle {
+  background: none;
+  border: 2px solid var(--darkblue);
+  color: var(--header-title);
+  cursor: pointer;
+  
+  padding: 0.2rem 0.2rem;
+  border-radius: 6px;
+  /* font-size: 1rem; */
+  
+  margin-left: 1rem;
+}
+
+#theme-toggle:hover {
+  border-color: var(--blue);
+}
+
+
+/*
+MARK: SANDS
+*/
+
+:root {
+  --main: var(--red);
+  --main-dark: var(--darkred);
+  --main-dark: var(--black);
+}
+
+body {
+   /* disables text selection, more pretty :)*/
+  user-select: none;
+}
+
+.content {
+  position: relative;
+
+  margin: 1em auto;
+  max-width: min(1000px, 90%);
+  height: calc(100vh - 100px - 2em);
+  /* background-color: var(--void); */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#simulation {
+  display: block;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--red);
+  transition: background 0.2s, color 0.2s;
+
+  z-index: -1;
+}
+
+#timer {
+  text-align: center;
+  font-size: 80px;
+  margin: 0 auto;
+  width:100%;
+  color: var(--white)
+}
+
+input {
+  /* display: block; */
+  margin: 0 auto;
+
+  /* width:100%; */
+
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--grey);
+}
+input#alarm-input {
+  font-size: 32px;
+}
+input#goal-input {
+  font-size: 24px;
+}
+input ::placeholder {
+  color: var(--grey);
+  opacity: 0.8; /* Firefox */
+}
+
+
+/*
+MARK: BUTTON
+*/
+
+#theme-buttons {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  transform: translate(-50%); /* center that thing on the edge */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#settings-buttons {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  transform: translate(50%); /* center that thing on the edge */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#theme-buttons button, #settings-buttons button {
+  width: 55px;
+  height: 55px;
+  transform: rotate(-45deg);
+  margin-bottom: 40px;
+  /* padding: 2px; */
+
+  background-color: var(--void);
+  color: var(--header-title);
+  font-size: 2em;
+  border: none;
+
+  align-items: center;
+}
+
+#theme-buttons button img, #settings-buttons button img {
+  display: block;
+  margin: auto;
+  width: 40px;
+}
+
+#theme-buttons button:hover, #settings-buttons button:hover {
+  background-color: var(--black)
+}
+
+/*
+MARK: MODAL
+*/
+
+.modal {
+  /* display:none; */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#theme-modal {
+  display:none;
+}
+
+#settings-modal {
+  display:none;
+}
+
+#info-modal {
+  display:none;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--background-color);
+
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  gap: 10px;
+}
+
+.modal-content input {
+  font-size: 16px;
+}
+
+.modal-content button {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  padding: 8px 8px;
+
+  background-color: var(--void);
+  color: var(--white);
+}
+
+.modal-content button:hover {
+  background-color: var(--gray);
+}
+
+.modal-content input {
+  display: block;
+  /* left: 0; */
+  /* margin-right: 0; */
+  float: right;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+#delete-theme-list button {
+  width: 100%;
+  padding: 10px;
+  margin: 4px 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+::placeholder {
+  color: var(--text-color) 50%;
+}

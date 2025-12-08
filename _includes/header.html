@@ -1,6 +1,4 @@
 <header class="site-header">
-  <!-- <div class="logo">
-  </div> -->
   <a href="/", class="logo"><img src="/assets/img/kevin-jin-logo-website.png" alt="logo"></a>
   
   <nav>
@@ -8,9 +6,7 @@
     <a href="/">Home</a>
     <a href="/articles/">Articles</a>
     <a href="/about/">About</a>
-    <!-- <a href="/sands/">Sands</a> -->
-    <!-- <a href="https://twitter.com/yourprofile"><img src="/assets/img/twitter.svg"></a> -->
-    <!-- <a href="https://youtube.com/yourchannel"><img src="/assets/img/youtube.svg"></a> -->
+    <a href="/sands/">Sands</a>
 
     <button id="theme-toggle">🌓</button>
   </nav>
@@ -18,8 +14,7 @@
 
 <script>
   const toggle = document.getElementById('theme-toggle');
-
-  // Load saved theme
+  
   const saved = localStorage.getItem('theme');
   if (saved) {
     document.documentElement.setAttribute('data-theme', saved);
