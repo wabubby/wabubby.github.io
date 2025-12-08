@@ -204,9 +204,10 @@ main {
 h1.post-title {
   margin: 0;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 2rem;
   /* text-shadow: 0 2px 8px rgba(0,0,0,0.4); */
-  background-color: var(--void)
+  background-color: var(--void);
+  padding: 2px 2px;
 }
 
 .post-date {

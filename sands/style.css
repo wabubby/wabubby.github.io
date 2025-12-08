@@ -225,7 +225,10 @@ MARK: BUTTON
 }
 
 #theme-buttons button:hover, #settings-buttons button:hover {
-  background-color: var(--black)
+  /* width: 60px;
+  height: 60px; */
+  border: 2px solid var(--white);
+  /* background-color: var(--black) */
 }
 
 /*

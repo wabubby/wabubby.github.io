@@ -296,7 +296,9 @@ function formatTime(seconds) {
   const mins = Math.floor(seconds/60) % 60;
   const secs = seconds % 60;
   
-  if (hrs > 0) {
+  if (seconds < 0) {
+    return "ring ring!";
+  } else if (hrs > 0) {
       return `${hrs}:${formatDouble(mins)}:${formatDouble(secs)}`;
   } else {
       return `${mins}:${formatDouble(secs)}`;
@@ -725,7 +727,7 @@ alarmInput.addEventListener("keypress", (event) => {
 
 alarmInput.addEventListener("focusin", (event) => {
   if (alarmTimer > 0) {
-    alarmInput.value = getReverseSeconds(alarmTimer);
+    alarmInput.value = getReverseSeconds(Math.floor(alarmTimer));
   } else {
     alarmInput.value = "";
   }
