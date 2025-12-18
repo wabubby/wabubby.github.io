@@ -7,9 +7,7 @@ author: "Kevin Jin"
 tags: [devlog, superant]
 ---
 
-It took just over a week, but the steam page is up! If you're planning to release a game, it's good to get this up as early so you have something to point to as well to start accruing those tasty tasty wishlists. So, uh, wishlist SUPER ANT on steam! 
-
-[[link to superant and picture of the game]]
+It took just over a week, but the steam page is up! If you're planning to release a game, it's good to get this up as early so you have something to point to as well to start accruing those tasty tasty wishlists. So, uh, [WISHLIST SUPERANT ON STEAM!](https://store.steampowered.com/search/?developer=Andrygast)
 
 Since I've never distributed an app on steam before, it all started with getting my **steam partnership** verified. Just give them all your personal, financial, and tax information and you're good to go in two days.
 
@@ -98,7 +96,9 @@ However, I think the **pose could be more dynamic**, perhaps with more perspecti
 
 At the end of the day, it came out better than I thought it would so I'm pretty pleased.
 
-And remember readers, **WISHLIST SUPER ANT on Steam**!
+And remember readers, [WISHLIST SUPERANT ON STEAM!](https://store.steampowered.com/search/?developer=Andrygast)!
+
+
 
 <br>
 
