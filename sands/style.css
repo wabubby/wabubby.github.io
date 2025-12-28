@@ -36,7 +36,7 @@ body {
   background: var(--background-color);
   margin: 0;
   padding: 0;
-  
+
   /* inheriting properties */
   color: var(--text-color);
   line-height: 1.7;
@@ -53,12 +53,18 @@ a:hover {
   text-decoration: underline;
 }
 
-b, strong {
+b,
+strong {
   color: var(--red);
   font-weight: 700;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Fira Sans", monospace;
   color: var(--header-title);
   margin-top: 0.5em;
@@ -66,7 +72,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-.site-header, .site-footer {
+.site-header,
+.site-footer {
   background: var(--header-background);
   padding: 1rem 2rem;
 
@@ -90,11 +97,11 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid var(--darkblue);
   color: var(--header-title);
   cursor: pointer;
-  
+
   padding: 0.2rem 0.2rem;
   border-radius: 6px;
   /* font-size: 1rem; */
-  
+
   margin-left: 1rem;
 }
 
@@ -114,7 +121,7 @@ MARK: SANDS
 }
 
 body {
-   /* disables text selection, more pretty :)*/
+  /* disables text selection, more pretty :)*/
   user-select: none;
 }
 
@@ -149,7 +156,7 @@ body {
   text-align: center;
   font-size: 80px;
   margin: 0 auto;
-  width:100%;
+  width: 100%;
   color: var(--white)
 }
 
@@ -165,15 +172,19 @@ input {
   outline: none;
   color: var(--grey);
 }
+
 input#alarm-input {
   font-size: 32px;
 }
+
 input#goal-input {
   font-size: 24px;
 }
+
 input ::placeholder {
   color: var(--grey);
-  opacity: 0.8; /* Firefox */
+  opacity: 0.8;
+  /* Firefox */
 }
 
 
@@ -185,8 +196,9 @@ MARK: BUTTON
   position: absolute;
   top: 20px;
   left: 0;
-  transform: translate(-50%); /* center that thing on the edge */
-  
+  transform: translate(-50%);
+  /* center that thing on the edge */
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,14 +208,16 @@ MARK: BUTTON
   position: absolute;
   top: 20px;
   right: 0;
-  transform: translate(50%); /* center that thing on the edge */
-  
+  transform: translate(50%);
+  /* center that thing on the edge */
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#theme-buttons button, #settings-buttons button {
+#theme-buttons button,
+#settings-buttons button {
   width: 55px;
   height: 55px;
   transform: rotate(-45deg);
@@ -218,13 +232,15 @@ MARK: BUTTON
   align-items: center;
 }
 
-#theme-buttons button img, #settings-buttons button img {
+#theme-buttons button img,
+#settings-buttons button img {
   display: block;
   margin: auto;
   width: 40px;
 }
 
-#theme-buttons button:hover, #settings-buttons button:hover {
+#theme-buttons button:hover,
+#settings-buttons button:hover {
   /* width: 60px;
   height: 60px; */
   border: 2px solid var(--white);
@@ -239,22 +255,23 @@ MARK: MODAL
   /* display:none; */
   position: fixed;
   z-index: 1000;
-  left: 0; top: 0;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 #theme-modal {
-  display:none;
+  display: none;
 }
 
 #settings-modal {
-  display:none;
+  display: none;
 }
 
 #info-modal {
-  display:none;
+  display: none;
 }
 
 .modal-content {

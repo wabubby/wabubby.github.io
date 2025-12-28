@@ -171,10 +171,6 @@ So let's open them jaws, give em a smile, and change the perspective. Wait a sec
 
 After that, I knew I was cooking. This way, I can also change my first name while still perserving my last name. That's not a joke by the way. Too many Kevin Jins in this world. If I want more brand recognition, I need cooler name, like Hideous or Ripper.
 
-<small> *If Michael is reading this right now you can stop reading and ask Kevin to start now.* </small>
-
 ---
 
-If you got any questions/wanna tell me sumthin:
-- email: **kevinjin729@gmail.com**
-- or, if that's not your style: friend me on discord **@andrygast**
+{% include end.md %}

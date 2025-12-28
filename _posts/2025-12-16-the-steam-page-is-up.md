@@ -110,6 +110,4 @@ And remember readers, [WISHLIST SUPERANT ON STEAM!](https://store.steampowered.c
 
 ---
 
-If you got any questions/wanna tell me sumthin:
-- email: **kevinjin729@gmail.com**
-- or, if that's not your style: friend me on discord **@andrygast**
+{% include end.md %}

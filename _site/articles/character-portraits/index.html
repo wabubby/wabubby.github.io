@@ -1,0 +1,193 @@
+<!DOCTTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="icon" href="/assets/img/tab-icon.png">
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <title>4: Mistakes Making Character Portraits | Kevin Jin</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header class="site-header">
+  <a href="/", class="logo"><img src="/assets/img/kevin-jin-logo-website.png" alt="logo"></a>
+  
+  <nav>
+    
+    <a href="/">Home</a>
+    <a href="/articles/">Articles</a>
+    <a href="/about/">About</a>
+    <a href="/sands/">Sands</a>
+
+    <button id="theme-toggle">🌓</button>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+</script>
+
+        <main>
+            <article>
+
+    <nav class="post-nav">
+        
+            <a class="post-nav-button prev" href="/articles/the-steam-page-is-up/">← 3: Tips for Steam Pages!</a>
+        
+
+        
+    </nav>
+    
+    <div class="banner">
+        <img src="/assets/img/portrait-sprite.png" alt="banner" class="banner-img">
+
+        <div class="banner-gradient"></div>
+
+        <div class="banner-content">
+
+            <h1 class="post-title">4: Mistakes Making Character Portraits</h1>
+            <p class="post-date">Dec 27, 2025 | by Kevin Jin</p>
+            <div class="post-tags">
+                
+                <a class="tag" href="/tags/superant/" class="post-tag">#superant</a>
+                
+                <a class="tag" href="/tags/devlog/" class="post-tag">#devlog</a>
+                
+            </div>
+
+        </div>
+    </div>
+            
+
+    <div class="post-content">
+        <p>People overestimate how much they can do in a day, but underestimate how much they accomplish in a month. It logically follows that setting <strong>goals on a weekly basis</strong> allows for a perfect evaluation on your targets.</p>
+
+<p>I spent <strong>this week</strong> doing <strong>character portraits</strong>! Wait, it’s been <strong>almost 2 weeks</strong> since the last post? Ah, fuck.</p>
+
+<figure>
+  <img src="/assets/img/anton-worried.png" />
+  <figcaption><i>MFW I miss the deadline</i></figcaption>
+</figure>
+
+<p>There are only two options for me: <strong>adapt</strong> or <strong>die forgotten</strong> as a failure to my ancestors and a financial burden to my family.</p>
+
+<p>I spent the last <strong>11 DAYS</strong> drawing character portraits. That’s more than 50% overschedule. So allow me to reflect on my misdeeds.</p>
+
+<h2 id="my-misdeeds">My Misdeeds</h2>
+
+<p>The easy excuse is that winter break has given me a lot of distractions. I’ve been out with friends and at christmas parties. My sisters came home from uni. Also, I was forced to learn Guilty Gear Strive.</p>
+
+<figure>
+  <img src="/assets/img/guilty-gear-strive.JPG" />
+  <figcaption><i>This is a very fun game.</i></figcaption>
+</figure>
+
+<p>But even with those distractions, I’m convinced I still could’ve done better and hit deadline. When things go wrong, there’s rarely a sole reason. That’s the <code class="language-plaintext highlighter-rouge">*snorts*</code> <strong>single causation fallacy</strong>. I think there’s more to learn here than blame christmas.</p>
+
+<p>My goal was to make <strong>12 portraits for 2 characters</strong>. Most games use small portraits or the same static perspective with different faces, but I wanted to have unique <strong>full-body poses</strong> to show off more personality. This is typically very uneconomical, but SUPERANT has only a few characters.</p>
+
+<figure>
+  <img src="/assets/vid/antonOrganized.gif" />
+  <figcaption><i>Overworld sprite for the first character.</i></figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/vid/shiib.gif" />
+  <figcaption><i>Overworld sprite of the second character.</i></figcaption>
+</figure>
+
+<p>Other than that, no extra spice. No various head tilts, lip-syncing, or blinking implementation. SUPERANT is supposed to be retro, after all.</p>
+
+<figure>
+  <img src="/assets/img/crosscode-portraits.png" />
+  <figcaption><i>Potraits connect players to those small overworld sprites.</i></figcaption>
+</figure>
+
+<p>My first mistake is <strong>not accounting for my inexperience</strong>. Since I have little experience with anatomy, I had no idea of how much work was actually ahead of me. I assumed that like other pixel art, it would <strong>only take a few days</strong> and I’d have a lot of free time left over to refine and do some jolly christmas things with friends and family.</p>
+
+<p>Doing <strong>new things is like diving into the fog</strong>. It’s an exciting and integral part of learning any craft. But you don’t want to get <strong>too lost</strong>, spending months on tangents with disproportionate impact. Maintaining <strong>interest in a long project</strong> requires a good, <strong>rythmic pacing</strong> between <strong>predictable rigidity</strong> and <strong>spontaneous exploration</strong>.</p>
+
+<figure>
+  <img src="/assets/img/wanderer-above-fog.png" />
+  <figcaption><i>Insert relevant picture.</i></figcaption>
+</figure>
+
+<p>In my opinion, characters portraits are worth it. They make my characters a lot more intriguing and enable me to tell a more involved story. The problem was how I went about making them.</p>
+
+<p>I assumed that conceptualizing and rendering the portraits would be as easy as any other sprite, without considering everything new I would have to learn. In fact, I spent the <strong>least amount of time actually pixelling</strong>. Most of my time was spent drawing, revising, and deleting my character designs and poses over and over again.</p>
+
+<p>I thought I could base my poses off of references, but very little of what I found online matched the personalities I had in mind for my characters. I ended up having to create most of the poses on my own, which took a while.</p>
+
+<figure>
+  <img src="/assets/img/shiib-portraits.png" />
+  <figcaption><i>Rough sketches for the second character.</i></figcaption>
+</figure>
+
+<p>Context-switching rapidly between tasks is unproductive, but so is doing the same thing for 5 days in a row. It got <strong>exhausting to wake up and prepare myself to do the same thing</strong> all over again. It got so repetitive I was literally dreaming about Aseprite last night.</p>
+
+<p>I should’ve paced myself out and added more coding or reading activities to my week. One of the advantages of solo game development is that there is always <strong>something different to do if you get bored</strong>, but I didn’t allow myself to do that.</p>
+
+<p>As I continued to repeat the motions throughout the week, I learned some various techniques to expedite drawing new poses:</p>
+<ul>
+  <li>Make Character <strong>Model Sheets</strong>. Not having concrete FORWARD/SIDE perspectives led to annoying inconsistencies between sprites.</li>
+  <li><strong>Flip the Canvas</strong> <em>very</em> frequently. Doing so enabled me to revise and polish much faster, especially with the faces.</li>
+  <li>Lay out portraits <strong>horizontally</strong> to make it easier to crossreference poses and keep sizes consistent.</li>
+  <li>Keep character design <strong>unique yet clear</strong>. Use color to seperate different parts of the body and make weird poses easily readable. Keep the design simple so you can draw it a whole lot.</li>
+</ul>
+
+<p>In the end, it went pretty well. There was a lot of time in the middle where I felt very annoyed with the process, and very unhappy with the sprites, but looking at them now, they’re good enough.</p>
+
+<figure>
+  <img src="/assets/img/anton-portraits.png" />
+  <figcaption><i>Some Portraits for the first character.</i></figcaption>
+</figure>
+
+<figure>
+  <img src="/assets/img/shiib-pixel-portraits.png" />
+  <figcaption><i>Some portraits for the second character.</i></figcaption>
+</figure>
+
+<hr />
+
+<p>If you got any questions/wanna tell me sumthin:</p>
+<ul>
+  <li>email: <strong>kevinjin729@gmail.com</strong></li>
+  <li>or, if that’s not your style: friend me on discord <strong>@andrygast</strong></li>
+</ul>
+
+    </div>
+
+    <nav class="post-nav">
+        
+            <a class="post-nav-button prev" href="/articles/the-steam-page-is-up/">← 3: Tips for Steam Pages!</a>
+        
+
+        
+    </nav>
+
+</article>
+        </main>
+
+        <footer class="site-footer">
+    Made by Kevin Jin.
+    © 2025 Kevin Jin
+</footer>
+
+    </body>
+</html>

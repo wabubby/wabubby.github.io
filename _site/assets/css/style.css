@@ -14,7 +14,7 @@
   --darkblue: #219E9E;
   --purple: #be55f2;
   --darkpurple: #7643b6;
-  
+
   --text-color: var(--grey);
   --background-color: var(--black);
   --header-background: var(--void);
@@ -24,7 +24,7 @@
   font-size: 18px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   :root {
     font-size: 22px;
   }
@@ -41,7 +41,7 @@ body {
   background: var(--background-color);
   margin: 0;
   padding: 0;
-  
+
   /* inheriting properties */
   color: var(--text-color);
   line-height: 1.7;
@@ -73,12 +73,18 @@ a.post-title:hover {
   text-decoration: underline;
 }
 
-b, strong {
+b,
+strong {
   color: var(--red);
   font-weight: 700;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Fira Sans", monospace;
   color: var(--header-title);
   margin-top: 1.5em;
@@ -87,14 +93,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .red {
-  color:var(--red)
+  color: var(--red)
 }
 
 .blue {
-  color:var(--blue)
+  color: var(--blue)
 }
 
-.site-header, .site-footer {
+.site-header,
+.site-footer {
   background: var(--header-background);
   padding: 1rem 2rem;
 
@@ -118,11 +125,11 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid var(--darkblue);
   color: var(--header-title);
   cursor: pointer;
-  
+
   padding: 0.2rem 0.2rem;
   border-radius: 6px;
   /* font-size: 1rem; */
-  
+
   margin-left: 1rem;
 }
 
@@ -131,10 +138,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* article container for the le text */
-main { 
+main {
   width: 90%;
   max-width: 650px;
-  margin: auto; /* center that block */
+  margin: auto;
+  /* center that block */
   padding: 0rem 0;
 }
 
@@ -146,7 +154,7 @@ main {
 }
 
 .post-tags .tag {
-  display:inline-block;
+  display: inline-block;
 
   padding: 2px 5px;
 
@@ -182,14 +190,13 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 5em; /* adjust strength of fade */
+  height: 5em;
+  /* adjust strength of fade */
   pointer-events: none;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    var(--void)
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      var(--void));
 }
 
 .banner-content {
@@ -215,16 +222,17 @@ h1.post-title {
 }
 
 .home-banner {
-  position:relative;
+  position: relative;
   overflow: hidden;
-  height: calc(100vh - 100px); /* the viewport height minus the header height */
+  height: calc(100vh - 100px);
+  /* the viewport height minus the header height */
   width: 100%;
 }
 
 .home-banner-bg {
   position: absolute;
-  inset:0;
-  
+  inset: 0;
+
   background-image: url('/assets/img/super-ant.png');
   background-size: cover;
   background-position: 0px center;
@@ -238,13 +246,11 @@ h1.post-title {
   width: 30%;
   min-width: 555px;
   padding: 0px 40px;
-  
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 1)
-  );
-    
+
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 1));
+
   text-align: right;
   color: var(--white);
   line-height: 1;
@@ -270,16 +276,17 @@ h1.home-title {
   margin-top: 0rem;
 }
 
-.home-title > span {
+.home-title>span {
   font-size: 5rem;
   font-weight: 700;
-  
+
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
 .very-useful-decoratorative-rectangle {
-  margin: auto; /* CENTER THAT DIV!!!! */
+  margin: auto;
+  /* CENTER THAT DIV!!!! */
   margin-top: 1rem;
   height: 8px;
   /* background-color: var(--void); */
@@ -306,7 +313,8 @@ figure {
 
 .gallery {
   display: flex;
-  /* flex-direction: row; */ /* row by default */
+  /* flex-direction: row; */
+  /* row by default */
   flex-wrap: nowrap;
   justify-content: center;
 
@@ -322,7 +330,7 @@ figure img {
   /* width:10px; */
 
   object-fit: cover;
-  
+
   display: block;
   margin: auto;
 }
@@ -341,7 +349,7 @@ figcaption {
   /* margin-top: 40px; */
   display: flex;
   /* justify-content: stretch; */
-  gap:8px;
+  gap: 8px;
 }
 
 .post-nav-button {
