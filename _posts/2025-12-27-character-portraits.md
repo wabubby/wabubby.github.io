@@ -3,7 +3,7 @@ layout: post
 title: "4: Mistakes Making Character Portraits"
 image: /assets/img/portrait-sprite.png
 date: 2025-12-27
-author: "Kevin Jin"
+author: "Amaranth Jin"
 tags: [superant, devlog]
 ---
 

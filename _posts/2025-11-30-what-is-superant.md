@@ -3,7 +3,7 @@ layout: post
 title: "1: What is SuperAnt?"
 image: /assets/img/super-ant.png
 date: 2025-11-30
-author: "Kevin Jin"
+author: "Amaranth Jin"
 tags: [superant, devlog]
 ---
 

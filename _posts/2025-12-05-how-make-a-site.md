@@ -3,7 +3,7 @@ layout: post
 title: "2: Making a Personal Site"
 image: /assets/img/figma-design.png
 date: 2025-12-05
-author: "Kevin Jin"
+author: "Amaranth Jin"
 tags: [devlog, tutorial]
 ---
 

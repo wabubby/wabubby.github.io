@@ -5,7 +5,7 @@ banner: assets/img/super-ant.png
 ---
 
 Hi, I'm
-Kevin Jin
+Amaranth Jin
 (welcome to my site!)
 
 {% for post in site.posts limit:3 %}

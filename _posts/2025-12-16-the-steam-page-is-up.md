@@ -3,7 +3,7 @@ layout: post
 title: "3: Tips for Steam Pages!"
 image: /assets/img/store-page.png
 date: 2025-12-16
-author: "Kevin Jin"
+author: "Amaranth Jin"
 tags: [devlog, superant]
 ---
 
